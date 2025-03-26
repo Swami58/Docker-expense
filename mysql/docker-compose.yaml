@@ -1,4 +1,5 @@
 name: expense
+version: '3.8'
 networks:
   default:
     name: expense
@@ -9,6 +10,7 @@ services:
   backend:
     image: backend:v1.0
     container_name: backend
+    command: sh -c "sleep 20 && node /opt/server/index.js"
     depends_on:
       - mysql
   frontend:
